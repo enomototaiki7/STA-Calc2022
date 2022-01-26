@@ -1,0 +1,47 @@
+<!DOCTYPE html><meta charset="UTF-8">
+<html>
+<link rel="stylesheet" href="calc.css">
+<body>
+	<input />
+
+	<script>
+	function calc() //　「＝」ボタンが押されたので計算する
+	{
+		const v = document.querySelector( 'input' ).value
+		try{
+			const f = new Function( 'return '  + v )
+			update( f().toString())
+		} catch( _error ){
+			update( _error ) 
+		}
+	}
+
+	function update( _v )//input tag を更新する関数
+	{
+		document.querySelector('input').value = _v
+	}
+
+	function append( _v )//数字ボタンが押されたので数字の後ろに追加
+	{
+		document.querySelector('input').value += _v
+	}
+	</script></br>
+
+	<button onclick="append( '1' )">１</button>
+	<button onclick="append( '2' )">２</button>
+	<button onclick="append( '3' )">３</button>
+	<button onclick="append( '+' )">＋</button></br>
+	<button onclick="append( '4' )">４</button>
+	<button onclick="append( '5' )">５</button>
+	<button onclick="append( '6' )">６</button>
+	<button onclick="append( '-' )">－</button></br>
+	<button onclick="append( '7' )">７</button>
+	<button onclick="append( '8' )">８</button>
+	<button onclick="append( '9' )">９</button>
+	<button onclick="append( '*' )">×</button></br>
+	<button onclick="append( '0' )">０</button>
+	<button onclick="append( '.' )">.</button>
+	<button onclick="append( '/' )">÷</button>
+	<button id="i" onclick="calc()" >=</button></br>
+	<button id="ac" onclick="update('')">AC</button>
+</body></html>

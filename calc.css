@@ -1,0 +1,14 @@
+button {
+	width: 100px;
+	height: 100px;
+	font-size: 30px;
+	border-radius: 15px;
+}
+
+#i{
+	background-color: #b3b3ff;
+}
+
+#ac{
+	background-color: #ffb3b3;
+}
